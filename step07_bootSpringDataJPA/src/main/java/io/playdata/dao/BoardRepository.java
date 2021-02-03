@@ -16,6 +16,8 @@ public interface BoardRepository extends CrudRepository<Board, Long> {
 	 //특정 데이터가 title에 포함된 게시물 검색
 	 //select * from board where title like '%?%';
 	 List<Board> findBoardByTitleContaining(String titleData);
+	 
+	 List<Board> findBoardBySeqAndWriter(Long s, String w);
 }
 
 /* 사용자 정의 검색 메소드 추가 구현 가능

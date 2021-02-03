@@ -1,6 +1,7 @@
 package io.playdata.model.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
@@ -18,6 +19,7 @@ import lombok.ToString;
 @Entity
 public class Board {
 	@Id
+	@GeneratedValue
 	private Long seq;
 	private String title;
 	private String writer;

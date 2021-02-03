@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+	<button onclick="getData()">getData</button>
+	<button onclick="getAll()">getAll</button>
+	<br><hr>
+	<div id="viewData"></div>
+
+	<script type="text/javascript">
+		function getData() {
+			axios.get('board-seq-writer-search', {
+				params: {
+					"seq":5,
+					"writer": "김재웅"
+				}
+			})
+				.then((response) => {
+					document.getElementById("viewData").innerText += JSON.stringify(response.data);
+					console.log(response.data);
+				}, (error) => {
+					console.log(error);
+			});
+		}
+		
+		function getAll(){
+			axios.get('boardall', {})
+				.then((response) => {
+					document.getElementById("viewData").innerText += JSON.stringify(response.data);
+					console.log(response.data[0]);
+				}, (error) => {
+					console.log(error);
+			});
+			
+		}
+	</script>
+</body>
+</html>

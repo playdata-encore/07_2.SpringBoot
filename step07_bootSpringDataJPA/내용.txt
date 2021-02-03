@@ -1,0 +1,18 @@
+
+[2] html 과 jsp를 Spring Boot 구조에선 어떻게 어디에 개발해야 하는지에 대한 학습
+	1. src/main/resources/static/*.html, *.css, *.js, image 등
+		- src/main/webapp 경로와 동기화
+		
+	2. jsp
+		1. jsp를 url상에서 호출 및 서비스시
+		- src/main/webapp/*.jsp
+		
+		2. @RequestMapping 등의 설정으로 jsp 이동시
+			2-1. application.properties 에 설정 필수
+				spring.mvc.view.prefix=/WEB-INF/views/
+				spring.mvc.view.suffix=.jsp
+				
+[3] spring boot 기준에서 본 애노테이션
+	1. spring framework에서 사용 가능한 모든 애노테이션 사용
+	2. @RestController 사용시 client가 입력하는 데이터를 JSON 포맷으로 수용할 때 필수
+	
